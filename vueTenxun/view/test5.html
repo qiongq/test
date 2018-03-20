@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test5</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>computed 计算属性</h1>
+		<button @click="a++">Add to a</button>
+		<button @click="b++">Add to b</button>
+		<p>a：{{a}}</p>
+		<p>b：{{b}}</p>
+		<!--methods方法执行-->
+		<!-- <p>age+a = {{addToA()}}</p>
+		<p>age+b = {{addToB()}}</p> -->
+		<!--computed计算属性执行-->
+		<p>age+a = {{addToA}}</p>
+		<p>age+b = {{addToB}}</p>
+	</div>
+
+	<script src="../resource/js/test5.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test6</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<style>
+		span{
+			background: red;
+			display: inline-block;
+			padding: 10px;
+			color: #fff;
+			margin: 10px 0;
+		}
+		.changeColor span{
+			background: green;
+		}
+		.changeLength span:after{
+			content: 'length';
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="vue-app">
+		<!-- <h1>动态css class</h1>
+		<h2>示例1</h2>
+		<div v-bind:class="{changeColor:changeColor}" @click="changeColor =!changeColor">
+			<span>herry</span>
+		</div> -->
+		
+		<h2>示例2</h2>
+		<button @click="changeColor =!changeColor">changeColor</button>
+		<button @click="changeLength =!changeLength">changeLength</button>
+		<div v-bind:class="compClasses">
+			<span>andy</span>
+		</div>
+
+	</div>
+
+	<script src="../resource/js/test6.js"></script>
+</body>
+</html>

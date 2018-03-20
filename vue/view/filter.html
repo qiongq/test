@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>过滤器</title>
+</head>
+<body>
+	<div id="app">
+		<div>
+			<input type="text" v-model="length"/>mm
+			<br>
+			{{ length | meter }}
+		</div>
+		<hr>
+		<div>
+			<input type="text" v-model="price"/>
+			{{ price | currency('USD')}}
+		</div>
+	</div>
+	<script src="../resource/lib/vue.js"></script>
+	<script src="../resource/js/filter.js"></script>
+</body>
+</html>

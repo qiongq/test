@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test3</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>键盘Events</h1>
+		<label>姓名：</label>
+		<input type="text" @keyup.enter="logName">
+		<label>年龄：</label>
+		<input type="text" @keyup.alt.enter="logAge">
+	</div>
+
+	<script src="../resource/js/test3.js"></script>
+</body>
+</html>

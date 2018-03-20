@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test7</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>v-if 条件</h1>
+
+		<button @click="error =!error">toggle error</button>
+		<button @click="success=!success">toggle success</button>
+
+		<!-- <p v-if="error">网络连接错误 404</p>
+		<p v-else-if="success">网络连接成功 200</p> -->
+
+		<p v-show="error">网络连接错误 404</p>
+		<p v-show="success">网络连接成功 200</p>
+
+		<!--v-if不显示时不占位，dom结构会被删除，v-show是通过display属性控制显示隐藏的，隐藏时仍有dom结构-->
+	</div>
+
+	<script src="../resource/js/test7.js"></script>
+</body>
+</html>

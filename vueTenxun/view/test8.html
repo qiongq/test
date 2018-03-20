@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test8</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>v-for 循环</h1>
+
+		<!--数组下标获取-->
+		{{characters[0]}}
+		{{characters[1]}}
+		{{characters[2]}}
+
+		<!--数组遍历-->
+		<ul>
+			<li v-for="character in characters">{{character}}</li>
+		</ul>
+		<ul>
+			<li v-for="(user,index) in users">{{index+1}}.{{user.name}}:{{user.age}}</li>
+		</ul>
+		<div v-for="(user,index) in users">
+			<h2>{{index+1}}</h2>
+			<h3>{{user.name}}</h3>
+			<p>{{user.age}}</p>
+		</div>
+		<template v-for="(user,index) in users">
+			<h2>{{index+1}}</h2>
+			<h3>{{user.name}}</h3>
+			<p>{{user.age}}</p>
+		</template>
+		<!--使用template可以解决多次渲染生成div标签问题，优化性能-->
+
+		<template v-for="(user,index) in users">
+			<div v-for="(val,key) in user">
+				<p>{{key}}:{{val}}</p>
+			</div>
+		</template>
+	</div>
+
+	<script src="../resource/js/test8.js"></script>
+</body>
+</html>

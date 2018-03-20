@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>v-on指令</title>
+</head>
+<body>
+	<div id="app">
+		<button v-on="{mouseenter: onEnter,mouseleave: onOut}" v-on:click='onClick'>点我</button>
+		<!-- <form v-on:submit="onSubmit($event)">
+			<input type="text" />
+			<button type="submit">提交</button>
+		</form> -->
+		<!--stop-->
+		<form v-on:keyUp.enter="onKeyUp" v-on:submit.prevent="onSubmit()">
+			<input type="text" />
+			<button type="submit">提交</button>
+		</form>
+	</div>
+
+	<script src="../resource/lib/vue.js"></script>
+	<script src="../resource/js/v-on.js"></script>
+</body>
+</html>

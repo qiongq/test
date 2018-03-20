@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>v-bind指令</title>
+	<style type="text/css">
+		.active{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<a v-bind:class="klass" v-bind:href="url">
+			<img v-bind:src="image" />
+		</a>
+		<a v-bind:class="{active: isActive}">激活</a>
+	</div>
+
+	<script src="../resource/lib/vue.js"></script>
+	<script src="../resource/js/v-bind.js"></script>
+</body>
+</html>

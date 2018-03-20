@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test2</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<style>
+		#canvas{
+			width: 600px;
+			padding: 200px 20px;
+			text-align: center;
+			border: 1px solid #333;
+		}
+	</style>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>events</h1>
+		<!-- <button v-on:click="age++">涨一岁</button>
+		<button v-on:click="age--">减一岁</button> -->
+
+		<button @click.once="add(1)">涨一岁</button>
+		<button @click="subtract(1)">减一岁</button>
+		<button v-on:dblclick="add(1)">双击涨一岁</button>
+		<button v-on:dblclick="subtract(1)">双击减一岁</button>
+		<button v-on:click="add(10)">涨十岁</button>
+		<button v-on:click="subtract(10)">减十岁</button>
+		<p>我的年龄是{{age}}</p>
+
+		<div id="canvas" v-on:mousemove="updateXY">
+			{{x}},{{y}} -
+			<span @mousemove.stop>停止</span>
+		</div>
+
+		<a href="http://www.baidu.com" @click.prevent="alert">阻止默认行为</a>
+	</div>
+
+	<script src="../resource/js/test2.js"></script>
+</body>
+</html>

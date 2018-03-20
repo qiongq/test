@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test9</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<style>
+		#bag{
+			width: 200px;
+			height: 500px;
+			margin: 0 auto;
+			background: url('../resource/img/bag.png') center no-repeat;
+			background-size: 80%;
+		}
+		#bag.burst{
+			background-image: url('../resource/img/bag-burst.png');
+		}
+		#bag-health{
+			width: 200px;
+			border: 2px solid #000;
+			margin: 0 auto 20px auto;
+		}
+		#bag-health div{
+			height: 20px;
+			background: crimson;
+		}
+		#controls{
+			width: 200px;
+			margin: 0 auto;
+		}
+		#controls button{
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="vue-app">
+		<!--图片-->
+		<div id="bag" v-bind:class="{burst:ended}"></div>
+		<!--进度情况-->
+		<div id="bag-health">
+			<div v-bind:style="{width:health+'%'}"></div>
+		</div>
+		<!--控制按钮-->
+		<div id="controls">
+			<button @click="punch" v-show="!ended">使劲敲</button>
+			<button @click="restart">重新开始</button>
+		</div>
+	</div>
+
+	<script src="../resource/js/test9.js"></script>
+</body>
+</html>

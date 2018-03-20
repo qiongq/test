@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>v-model指令及其修饰符</title>
+</head>
+<body>
+	<div id="app">
+		<!--简版-->
+		<input type="text" v-model="name" /><br />
+		<span>姓名：{{name}}</span><br />
+		<!--.lazy-->
+		<input type="text" v-model.lazy="name" /><br />
+		<span>姓名：{{name}}</span><br />
+		<!--.trim
+			此处使用pre是为了对比空格差异，因为html标签只会解析第一个空格，肉眼看差异不大，
+			但真正后端存储数据时，不会自动删除空格-->
+		<input type="text" v-model="name" /><br />
+		<pre>姓名：{{name}}</pre><br />
+		<input type="text" v-model.trim="name" /><br />
+		<span>姓名：{{name}}</span><br />
+		<!--.number-->
+		<input type="text" v-model.number="pricesd" /><br />
+		<span>价格：{{pricesd}}</span><br /> 
+
+	</div>
+
+	<script src="../resource/lib/vue.js"></script>
+	<script src="../resource/js/v-model1.js"></script>
+</body>
+</html>

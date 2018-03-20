@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<title>v-model在其他元素及类型上的用法</title>
+</head>
+<body>
+	<div id="app">
+		<!--非vue-->
+		<label>
+			男
+			<input name="sex" type="radio" value="male" />
+		</label>
+		<label>
+			女
+			<input name="sex" type="radio" value="female" />
+		</label>
+		<br/>
+		<!--vue-->
+		<label>
+			男
+			<input v-model="sex" type="radio" value="male" />
+		</label>
+		<label>
+			女
+			<input v-model="sex" type="radio" value="female" />
+		</label>
+		<span>{{sex}}</span>
+		<br/>
+		<!--checkbox-->
+		<label>
+			猫
+			<input v-model="like" type="checkbox" value="cat" />
+		</label>
+		<label>
+			狗
+			<input v-model="like" type="checkbox" value="dog" />
+		</label>
+		<span>{{like}}</span>
+		<br/>
+		<!--textarea-->
+		<textarea v-model="article"></textarea>
+		<!--select 单选-->
+		<div>你来自哪里？</div>
+		<select v-model="from">
+			<option value="1">王家沟</option>
+			<option value="2">背背山</option>
+		</select>
+		<span>{{from}}</span>
+		<br/>
+		<!--select 多选-->
+		<div>你要去哪里？</div>
+		<select v-model="dest" multiple>
+			<option value="1">王家沟</option>
+			<option value="2">背背山</option>
+		</select>
+		<span>{{dest}}</span>
+	</div> 
+
+	<script src="../resource/lib/vue.js"></script>
+	<script src="../resource/js/v-model2.js"></script>
+</body>
+</html>
