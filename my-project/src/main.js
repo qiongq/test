@@ -3,27 +3,30 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'Vue-router'
-import {routes} from './routes'
+import { routes } from './routes'
+import axios from "axios"
 
 
 Vue.use(VueRouter)
 
+axios.defaults.baseURL = 'https://wd3054211831nbunuy.wilddogio.com/'
+
 const router = new VueRouter({
-	routes,
-	mode:'history',
-	scrollBehavior(to,from,savedPosition){
-		/*return {
-			x:0,y:500
-		}*/
-		/*return {
-			selector:'.btn'
-		}*/
-		if(savedPosition){
-			return savedPosition
-		}else{
-			return{x:0,y:0}
-		}
-	}
+    routes,
+    mode: 'history',
+    scrollBehavior(to, from, savedPosition) {
+        /*return {
+        	x:0,y:500
+        }*/
+        /*return {
+        	selector:'.btn'
+        }*/
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return { x: 0, y: 0 }
+        }
+    }
 })
 
 //全局守卫  不加载页面
@@ -55,8 +58,8 @@ const router = new VueRouter({
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
