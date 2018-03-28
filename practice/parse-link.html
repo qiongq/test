@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>解析链接</title>
+</head>
+<body>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script>
+		function getUrlParam(name){
+			var link = 'http://www.360guakao.net/zhaopin?cid=23&city=75&searchWord=&searchType=1&page=&pay=&area=&exp=&educate=&profession=&sorts=1';
+			var newLink = link.slice(link.indexOf('?')+1,link.length);
+			//console.log(newLink);
+			var arrLink = newLink.split('&');
+			//console.log(arrLink);
+			for (var i = 0; i < arrLink.length; i++) {
+				var  arrTitle = arrLink[i].split('=');
+				if(arrTitle[0] == name){
+					return arrTitle[1];
+				}else{
+					return undefined;
+				}
+			}
+		}
+		console.log(getUrlParam("cid"),getUrlParam("ooo"))
+
+		 function getRequest() {
+		  var url = "http://www.360guakao.net/zhaopin?cid=23&city=75&searchWord=&searchType=1&page=&pay=&area=&exp=&educate=&profession=&sorts=1"; //获取url中"?"符后的字串
+		  var theRequest = new Object();
+			var str = url.substr(url.indexOf("?")+1);
+			strs = str.split("&");
+			console.log(strs)
+			for(var i = 0; i < strs.length; i ++) {
+			  theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+
+			  console.log(strs[i].split("=")[0]);
+			  console.log(strs[i].split("=")[1]);
+
+			  theRequest.cid = 23;
+			  //decodeURI对一个编码后的 URI 进行解码
+			}
+			console.log(theRequest)
+	    return theRequest;
+	  }
+	   getRequest();
+
+	</script>
+</body>
+</html>
