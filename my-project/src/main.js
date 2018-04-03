@@ -6,10 +6,16 @@ import VueRouter from 'Vue-router'
 import { routes } from './routes'
 import axios from "axios"
 
+import { store } from "./store/store.js"
+
 
 Vue.use(VueRouter)
 
+//配置默认根路径
 axios.defaults.baseURL = 'https://wd3054211831nbunuy.wilddogio.com/'
+
+//配置vue原型(在任何组件中都可以正常使用axios)
+Vue.prototype.http = axios
 
 const router = new VueRouter({
     routes,
@@ -60,6 +66,7 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })
