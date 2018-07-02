@@ -9,6 +9,7 @@ import Register from './components/Register'
 import Form from './components/form'
 import Select from './components/Select'
 import Page from './components/Page'
+import Scroll from './components/Scroll'
 
 // 二级路由
 import Contact from './components/about/Contact'
@@ -73,5 +74,7 @@ export const routes = [{
     { path: '/form', name: "formLink", component: Form },
     { path: '/select', name: "selectLink", component: Select },
     { path: '/page', name: "pageLink", component: Page },
+    { path: '/scroll', name: "scrollLink", component: Scroll },
+
     { path: '*', redirect: '/' } //当路径错误时，跳转默认路径
 ]

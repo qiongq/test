@@ -27,6 +27,7 @@
 				<li><router-link :to="{name:'formLink'}" class="nav-link">表单</router-link></li>
 				<li><router-link :to="{name:'selectLink'}" class="nav-link">下拉</router-link></li>
 				<li><router-link :to="{name:'pageLink'}" class="nav-link">翻页</router-link></li>
+				<li><router-link :to="{name:'scrollLink'}" class="nav-link">无缝滚动</router-link></li>				
 			</ul>
 		</nav>
 	</header>
