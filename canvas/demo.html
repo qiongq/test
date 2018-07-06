@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas练习1</title>
+</head>
+
+<body>
+    <canvas id="canvas" style="border:1px solid #aaa;display: block;margin: 50px auto">
+        当前浏览器不支持canvas，请更换浏览器再试
+    </canvas>
+
+    <script>
+        window.onload = function(params) {
+            //初始化
+            var canvas = document.getElementById('canvas');
+            canvas.width = 1024;
+            canvas.height = 768;
+            if (canvas.getContext('2d')) {
+                var context = canvas.getContext('2d');
+                //使用context进行绘制
+            } else {
+                alert('当前浏览器不支持canvas，请更换浏览器再试');
+            }
+
+        }
+    </script>
+</body>
+
+</html>if

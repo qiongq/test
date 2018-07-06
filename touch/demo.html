@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="./js/jquery.min.js"></script>
+	<title></title>
+	<style>
+		.div1,.div2{
+			display: block;
+			width: 50%;
+			height: 300px;
+			background: blue;
+		}
+		.div2{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1" class="div1">sdsa</div>
+	<div class="div2">asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+	<div class="div1">sdsaasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+	<div class="div2">asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+	<div class="div1">sdsaasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+	<div class="div2">asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+	<script>
+		/*var div1 = document.getElementById('div1');
+		var isChange = true;
+
+		var startX ,startY , endX , endY;
+
+		//触摸开始（手指放在触摸屏上）
+		div1.addEventListener("touchstart",function(e){
+			//console.log(e);
+			startX = e.touches[0].clientX;
+			startY = e.touches[0].clientY;
+			//console.log("开始x："+startX+"        开始y："+startY);
+		})
+
+		//拖动（手指在触摸屏上移动）
+		div1.addEventListener("touchmove",function(e){
+			//console.log(e);
+			endX = e.touches[0].clientX;
+			endY = e.touches[0].clientY;
+			//console.log("结束x："+endX+"        结束y："+endY);
+
+			//向上滑动
+			//条件1保证纵向滑动
+			//条件2保证向上滑动，并滑动一定距离
+			//条件3保证只触发1次
+			if(Math.abs(endY-startY) > Math.abs(endX-startX) && (endY-startY < -200) && isChange){
+				isChange = false;
+				console.log('向上滑动');
+			}else if(Math.abs(endY-startY) > Math.abs(endX-startX) && (endY-startY > 200) && isChange){
+				isChange = false;
+				console.log('向下滑动');
+			}else if(Math.abs(endY-startY) < Math.abs(endX-startX) && (endX-startX > 100) && isChange){
+				isChange = false;
+				console.log('向左滑动');
+			}else if(Math.abs(endY-startY) < Math.abs(endX-startX) && (endX-startX < -100) && isChange){
+				isChange = false;
+				console.log('向右滑动');
+			}
+		})
+		div1.addEventListener("touchend",function(e){
+			isChange = true;
+		})
+		// $("#div1").on("touchstart",function (e) {
+		// 	console.log(e);
+		// })*/
+	</script>
+	<script>
+		// $(function(){
+		// 	var scrollHeight = document.window.scrollHeight;//文档的高度
+		// 	$(window).scroll(function() {
+		// 		var innerHeight =  window.innerHeight; //内部的高度
+		// 		var scrollTop = $(document).scrollTop();//元素被卷起来的高度
+		// 		// console.log(clientHeight +'     '+scrollTop);
+		// 		// console.log(scrollbottom);
+		// 		// console.log(scrollTop)
+		// 		if(innerHeight + scrollTop >= scrollHeight){
+		// 			alert('到底了~！');
+		// 		}
+		// 	})
+		// })
+	</script>
+</body>
+</html>

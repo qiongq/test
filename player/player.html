@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="DPlayer.min.css" />
+		
+		
+	</head>
+	<body>
+		<div id="dplayer" class="dplayer dplayer-no-danmaku"></div>
+		<!--解析-->
+		<script type="text/javascript" src="hls.min.js"></script>
+		<script type="text/javascript" src="DPlayer.min.js"></script>
+		<script>
+			let url1 = "output.m3u8";
+			const dp = new DPlayer({
+	    container: document.getElementById('dplayer'),
+		    video: {
+		        url: 'output.m3u8',
+		        type: 'hls'
+		    }
+		});
+			// var dplayer = new DPlayer({
+			//     element: document.getElementById('dplayer'),
+			//     autoplay: true,
+			//     theme: '#FADFA3',
+			//     loop: false,
+			//     screenshot: true, //截屏
+			//     hotkey: false,
+			//     video: {
+			//         url: url1,
+			//         defaultQuality: 0,
+			//         pic: '',
+			//         type: 'auto'
+			//     }
+			// });
+
+			/*const dp = new DPlayer({
+			    container: document.getElementById('dplayer'),
+			    video: {
+			        url: url1,
+			        type: 'customHls',
+			        customType: {
+			            'customHls': function (video, player) {
+			                const hls = new Hls();
+			                hls.loadSource(video.src);
+			                hls.attachMedia(video);
+			            }
+			        }
+			    }
+			});*/
+		</script>
+	</body>
+</html>
