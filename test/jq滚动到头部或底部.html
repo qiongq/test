@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jq滚动到头部或底部</title>
+		<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div style="height: 3000px; width: 100%;"></div>
+		
+		<script type="text/javascript">
+			$(window).scroll(function(){
+				var ks_area = $(window).height();
+				var wholeHeight = $(document).scrollTop();
+				var scrolltop = $(window).scrollTop();
+				if(ks_area + scrolltop >= wholeHeight){
+					alert('底部');
+				}
+				if(scrolltop == 0){
+					alert('顶部');
+				}
+			});
+		</script>
+	</body>
+</html>

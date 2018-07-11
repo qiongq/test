@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>可视区域加载</title>
+		<script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+		<style type="text/css">
+			#showId{
+				width: 500px;
+				height: 350px;
+				background-color: #D1434A;
+				margin: 1000px auto 0;
+			}
+			@-webkit-keyframes fadeInLeft{
+				0%{
+					opacity: 0;
+					transform: translate3d(-100%,0,0);
+					-webkit-transform: translate3d(-100%,0,0);
+				}
+				100%{
+					opacity: 1;
+					-webkit-transform: none;
+					-ms-transform: none;
+					transform: none;
+				}
+			}
+			
+			.fadeInLeft{
+				-webkit-animation-name: fadeInLeft;
+				animation-name: fadeInLeft;
+				-webkit-animation-duration: 2s;
+				animation-duration: 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="showId"></div>
+		<script type="text/javascript">
+			//js方法
+			/*function showDivs(){
+				var showId = document.getElementById('showId');
+				var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				var divTop = showId.getBoundingClientRect().top;
+				if(divTop <=  clients){
+					showId.classList.add('fadeInLeft');
+				}
+			}
+			window.onscroll = showDivs;*/
+			
+			//jq方法
+			$(window).scroll(function(){
+				var ks_area = $(window).height();
+				var scrollheight = $(window).scrollTop();
+				var divtop = $('#showId').offset().top;
+				if(ks_area + scrollheight >= divtop){
+					$('#showId').addClass('fadeInLeft');
+				}else{
+					$('#showId').removeClass('fadeInLeft');
+				}
+			})
+			
+			
+		</script>
+	</body>
+</html>
