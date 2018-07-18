@@ -1,0 +1,138 @@
+/*资质街活动专题页-开始*/
+.welfare-head-logobox{
+	padding: 26px 0;
+}
+.index-logo-box {
+    display: block;
+    width: 152px;
+    height: 42px;
+    overflow: hidden;
+}
+.welfare-logo-box > img,
+.welfare-logomark-box > img{
+	width: 100%;
+	height: 100%;
+}
+.welfare-logomark-box{
+	display: block;
+	width: 91px;
+	height: 31px;
+	overflow: hidden;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+.welfare-banner{
+	width: 100%;
+	height: 460px;
+	background: url('../images/welfare-banner.jpg') center no-repeat;
+	background-size: cover;
+}
+.welfare-bg{
+	background: #f3f5f7;
+}
+.welfare-lottery-block{
+	width: 100%;
+	height: 320px;
+	background: url('../images/welfare-lottery.png') no-repeat;
+}
+.welfare-flow-block{
+	position: relative;
+	width: 100%;
+	height: 1820px;
+	background: url('../images/welfare-flow.jpg') no-repeat;
+}
+.welfare-flow-login{
+	display: block;
+	position: absolute;
+	width: 186px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	border-radius: 46px;
+	background: #4f8dff;
+	top: 427px;
+	left: 170px;
+}
+.welfare-flow-apply{
+	display: block;
+	position: absolute;
+	width: 319px;
+	height: 76px;
+	line-height: 76px;
+	text-align: center;
+	font-size: 36px;
+	color: #fff;
+	border-radius: 76px;
+	background: #4f8dff;
+	bottom: 60px;
+	left: 441px;
+}
+.welfare-foot{
+	width: 100%;
+	height: 327px;
+	background: url('../images/welfare-foot.png') no-repeat;
+	background-size: cover;
+}
+.welfare-foot-pd{
+	padding-top: 120px;
+	padding-left: 177px;
+}
+.welfare-foot-code{
+	width: 304px;
+	height: 207px;
+	background: url('../images/welfare-code.png') no-repeat;
+	margin-right: 149px;
+}
+.welfare-foot-contact{
+	margin-top: 57px;
+}
+.welfare-contact-list > label{
+	display: inline-block;
+	font-size: 16px;
+	color: #fff;
+	vertical-align: top;
+}
+.welfare-contact-list > label > b{
+	display: inline-block;
+	vertical-align: sub;
+	margin-right: 4px;
+}
+.welfare-contact-r{
+	display: inline-block;
+}
+.welfare-contact-r > p{
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.welfare-contact-qq{
+	display: inline-block;
+	width: 81px;
+	height: 23px;
+	background: url('../images/welfare-icon.png') 0 0 no-repeat;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.welfare-contact-tel{
+	display: inline-block;
+	width: 19px;
+	height: 15px;
+	background: url('../images/welfare-icon.png') 0 -36px no-repeat;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*资质街活动专题页-结束*/

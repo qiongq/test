@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>资质街活动专题</title>
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/welfare.css">
+<style>
+	#button {
+		position: fixed;
+		right: 50px;
+		bottom: 80px;
+		width: 60px;
+		height: 30px;
+		border: none;
+		outline: none;
+		background-color: red;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	
+	.pic-box {
+		position: fixed;
+		background-color: rgba(0, 0, 0, .3);
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: none;
+	}
+	
+	.pic-box canvas {
+		z-index: 10;
+	}
+	
+	.pic-box .lay-box {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 100;
+		background-color: rgba(0, 0, 0, .3);
+	}
+	
+	.little-box {
+		position: absolute;
+		border: 2px dashed #fff;
+		width: 0px;
+		height: 0px;
+		left: 0px;
+		top: 0px;
+		overflow: hidden;
+	}
+	
+	.done-box {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		border: 2px dashed blue;
+		overflow: hidden;
+	}
+	
+	#then {
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<!--主体dom部分用容器包裹-->
+	<div id="pic">
+		<!--header-->
+		<div class="header">
+			<!--引用公共小头部-->
+			<!--引用小头部后将此段代码删除-开始-->
+			<div class="com-gray-bg">
+				<div class="com-size">
+					<div class="fl">
+						<p class="head-top-wel fl">欢迎来到资质街！<span></span></p>
+						<div class="head-city-box fl">
+							<div class="head-city-valbox">
+								<i class="wiki-address head-city-icon"></i>
+								<span class="head-city-val">全国</span>
+								<i class="wiki-drop-arrow head-city-icon head-city-arrow"></i>
+							</div>
+							<ul class="head-city-ul" style="display: none;">
+								<li>
+									<a href="http://www.360zizhibao.com/">全国</a>
+								</li>
+								<li>
+									<a href="http://beijing.360zizhibao.com/">北京</a>
+								</li>
+								<li>
+									<a href="http://tianjin.360zizhibao.com/">天津</a>
+								</li>
+								<li>
+									<a href="http://hebei.360zizhibao.com/">河北</a>
+								</li>
+								<li>
+									<a href="http://shanxi.360zizhibao.com/">山西</a>
+								</li>
+								<li>
+									<a href="http://neimenggu.360zizhibao.com/">内蒙古</a>
+								</li>
+								<li>
+									<a href="http://liaoning.360zizhibao.com/">辽宁</a>
+								</li>
+								<li>
+									<a href="http://jilin.360zizhibao.com/">吉林</a>
+								</li>
+								<li>
+									<a href="http://heilongjiang.360zizhibao.com/">黑龙江</a>
+								</li>
+								<li>
+									<a href="http://shanghai.360zizhibao.com/">上海</a>
+								</li>
+								<li>
+									<a href="http://jiangsu.360zizhibao.com/">江苏</a>
+								</li>
+								<li>
+									<a href="http://zhejiang.360zizhibao.com/">浙江</a>
+								</li>
+								<li>
+									<a href="http://anhui.360zizhibao.com/">安徽</a>
+								</li>
+								<li>
+									<a href="http://fujian.360zizhibao.com/">福建</a>
+								</li>
+								<li>
+									<a href="http://jiangxi.360zizhibao.com/">江西</a>
+								</li>
+								<li>
+									<a href="http://shandong.360zizhibao.com/">山东</a>
+								</li>
+								<li>
+									<a href="http://henan.360zizhibao.com/">河南</a>
+								</li>
+								<li>
+									<a href="http://hubei.360zizhibao.com/">湖北</a>
+								</li>
+								<li>
+									<a href="http://hunan.360zizhibao.com/">湖南</a>
+								</li>
+								<li>
+									<a href="http://guangdong.360zizhibao.com/">广东</a>
+								</li>
+								<li>
+									<a href="http://guangxi.360zizhibao.com/">广西</a>
+								</li>
+								<li>
+									<a href="http://hainan.360zizhibao.com/">海南</a>
+								</li>
+								<li>
+									<a href="http://chongqing.360zizhibao.com/">重庆</a>
+								</li>
+								<li>
+									<a href="http://sichuan.360zizhibao.com/">四川</a>
+								</li>
+								<li>
+									<a href="http://guizhou.360zizhibao.com/">贵州</a>
+								</li>
+								<li>
+									<a href="http://yunnan.360zizhibao.com/">云南</a>
+								</li>
+								<li>
+									<a href="http://xicang.360zizhibao.com/">西藏</a>
+								</li>
+								<li>
+									<a href="http://shangxi.360zizhibao.com/">陕西</a>
+								</li>
+								<li>
+									<a href="http://gansu.360zizhibao.com/">甘肃</a>
+								</li>
+								<li>
+									<a href="http://qinghai.360zizhibao.com/">青海</a>
+								</li>
+								<li>
+									<a href="http://ningxia.360zizhibao.com/">宁夏</a>
+								</li>
+								<li>
+									<a href="http://xinjiang.360zizhibao.com/">新疆</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="fr">
+						<ul class="head-top-oper">
+							<li>普通会员，请
+								<a href="http://www.360zizhibao.com/user/login/index" rel="nofollow">登录</a><span></span></li>
+							<li>
+								<a href="http://www.360zizhibao.com/user/register/index" rel="nofollow">注册</a><span></span></li>
+							<!-- <li><a href="http://www.360zizhibao.com/user/login/servicerLogin" target="_blank">服务商登录</a><span></span></li>
+					<li><a href="http://www.360zizhibao.com/portal/single/joinservicer" target="_blank">服务商加盟</a><span></span></li> -->
+							<li>
+								<a href="http://www.360zizhibao.com/portal/publish/index" target="_blank" rel="nofollow">转让租借信息发布</a>
+							</li>
+						</ul>
+					</div>
+					<div class="cl"></div>
+				</div>
+			</div>
+			<!--引用小头部后将此段代码删除-结束-->
+			<div class="com-size">
+				<div class="welfare-head-logobox">
+					<a class="welfare-logo-box fl" href="/">
+						<img src="./images/logo.png" />
+					</a>
+					<a class="welfare-logomark-box fl" href="#"><img src="./images/logo-mark.png"></a>
+					<div class="cl"></div>
+				</div>
+			</div>
+		</div>
+		<!--主体-->
+		<div class="main">
+			<!--banner-->
+			<div class="welfare-banner"></div>
+			<div class="welfare-bg">
+				<div class="com-size">
+					<!--送奖券-->
+					<div class="welfare-lottery-block"></div>
+					<!--参与流程-->
+					<div class="welfare-flow-block">
+						<a class="welfare-flow-login" href="#">立即登录</a>
+						<a class="welfare-flow-apply" href="#">立即申领</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--尾部-->
+		<div class="footer">
+			<div class="welfare-foot">
+				<div class="com-size">
+					<div class="welfare-foot-pd">
+						<div class="welfare-foot-code fl"></div>
+						<div class="welfare-foot-contact fl">
+							<div class="welfare-contact-list">
+								<label>提示：</label>
+								<div class="welfare-contact-r">
+									<p>活动中遇到任何问题，请点击
+										<a class="welfare-contact-qq" href="#"></a>
+									</p>
+									<p><span class="welfare-contact-tel"></span>服务热线：0551-63674088</p>
+								</div>
+							</div>
+							<div class="welfare-contact-list">
+								<label><b>*</b>声明：</label>
+								<div class="welfare-contact-r">
+									<p>本次活动最终解释权归资质街所有！</p>
+								</div>
+							</div>
+						</div>
+						<div class="cl"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--悬浮截图按钮-->
+	<button type="button" id="button">截图</button>
+	<!--截图遮罩容器-->
+	<div class="pic-box"></div>
+	<!--存储截图后的图形-->
+	<canvas id="then"></canvas>
+	<!--jquery 1.9.1以上版本以及html转canvasjs-->
+	<script src="js/jQuery.js"></script>
+	<script src="js/html2canvas.js"></script>
+	<script>
+		$("#button").click(function() {
+			//点击截图首先将整个网页获取变成一个canvas图形对象
+			/*
+				- document.querySelector() :返回文档中匹配指定 CSS 选择器的一个元素,id/class/标签名都可，相当于jq中的$
+			*/
+			html2canvas(document.querySelector("#pic")).then(canvas => {
+				var scrollTop = $(window).scrollTop();//滚动条距离顶部的距离
+				var scrollLeft = $(window).scrollLeft();//滚动条距离左边的距离
+				console.log(scrollTop+"      "+ scrollLeft);
+				var div = document.createElement("div");//新建一个div(截图遮罩容器)
+				div.className = "lay-box";//设置div的class
+				$(".pic-box").append(canvas).append(div).show();//追加canvas画布和div(阴影、选取、按钮)
+				$(canvas).css({
+					"position": "relative",
+					"top": -scrollTop,
+					"left": -scrollLeft
+				})
+				canvas.className = "canvas";
+				//自此以上 创建一个新的canvas对象存贮整个网页的canvas 并创建一个div做遮罩 都放在pic-box容器里当做遮罩层 当点击时其实是用canvas对象取代了当前网页展示
+				$(document).bind('mousewheel', function(event, delta) {
+					return false;
+				});
+				$("body").css("overflow", "hidden")
+				//自此以上 禁止滚轮滑动以及浏览器滑动效果 做到一屏截图
+				var startX = 0,//开始点x坐标
+					startY = 0,//开始点y坐标
+					retcLeft = 0,//截图框距左边距离
+					retcTop = 0,//截图框距右边距离
+					retcWidth = 0,//截图框宽
+					retcHeight = 0;//截图框高
+					width = 0;//截图框宽（存在重复代码中解释）
+					height = 0;//截图框高（存在重复代码中解释）
+				var flag = false;//因为要检测mousemove事件 这个变量的用处在于检测只有鼠标按下到松开过程中mouseover才生效
+				//鼠标按下时获取开始点以及建立一个拖动时的盒子 来动态显示拖动效果
+				$(".lay-box").mousedown(function(e) {
+					//此处if判断的作用在于在用户圈出一个截图框以后 禁止再拖动一次
+					if($(this).has(".done-box").length == 0) {
+						flag = true;
+						var evt = window.event || e;//这里是对event对象判断，兼容浏览器写法
+						startX = evt.clientX;
+						startY = evt.clientY;
+						var div = document.createElement("div");
+						div.className = "little-box";
+						div.style.marginLeft = startX + "px";
+						div.style.marginTop = startY + "px";
+						$(".lay-box").append(div);
+					}
+				})
+				//鼠标松开以后确定截图框范围 截取canvas对象 返回base64编码
+				$(".lay-box").mouseup(function(e) {
+					if($(this).has(".done-box").length == 0) {
+						var evt = window.event || e;
+						//done-box是在鼠标松开以后删除动态的拖拽盒子 建立一个新的完成体盒子
+						var div = document.createElement("div");
+						div.className = "done-box";
+						div.style.marginLeft = retcLeft;
+						div.style.marginTop = retcTop;
+						div.style.width = retcWidth;
+						div.style.height = retcHeight;
+						//以下四个div都是做中间高亮 周边遮罩的
+						var div1 = document.createElement("div");
+						div1.className = "box1";
+						div1.style.position = 'absolute';
+						div1.style.top = 0;
+						div1.style.left = 0;
+						div1.style.marginLeft = 0;
+						div1.style.marginTop = 0;
+						div1.style.width = '100%';
+						div1.style.height = retcTop;
+						div1.style.backgroundColor = "rgba(0,0,0,.3)";
+						var div2 = document.createElement("div");
+						div2.className = "box2";
+						div2.style.position = 'absolute';
+						div2.style.top = 0;
+						div2.style.left = 0;
+						div2.style.marginLeft = 0;
+						div2.style.marginTop = retcTop;
+						div2.style.width = retcLeft;
+						div2.style.height = "100%";
+						div2.style.backgroundColor = "rgba(0,0,0,.3)";
+						var div3 = document.createElement("div");
+						div3.className = "box3";
+						div3.style.position = 'absolute';
+						div3.style.top = 0;
+						div3.style.left = 0;
+						div3.style.marginLeft = parseInt(retcLeft) + parseInt(retcWidth) + 4 + "px";
+						div3.style.marginTop = parseInt(retcTop) + "px";
+						div3.style.width = $(window).width() - parseInt(retcLeft) - parseInt(retcWidth) + "px";
+						div3.style.height = "100%";
+						div3.style.backgroundColor = "rgba(0,0,0,.3)";
+						var div4 = document.createElement("div");
+						div4.className = "box4";
+						div4.style.position = 'absolute';
+						div4.style.top = 0;
+						div4.style.left = 0;
+						div4.style.marginLeft = parseInt(retcLeft) + "px";
+						div4.style.marginTop = parseInt(retcTop) + parseInt(retcHeight) + 4 + "px";
+						div4.style.width = parseInt(retcWidth) + 4 + "px";
+						div4.style.height = $(window).height() - parseInt(retcTop) - parseInt(retcHeight) + "px";
+						div4.style.backgroundColor = "rgba(0,0,0,.3)";
+						//以下两个div是确定和取消按钮 需要加东西原生写就行了
+						var div5 = document.createElement("div");
+						div5.innerHTML = "确定";
+						div5.className = "sure";
+						div5.style.position = 'absolute';
+						div5.style.top = parseInt(retcTop) + parseInt(retcHeight) + 4 + "px";
+						div5.style.left = parseInt(retcLeft) + parseInt(retcWidth) + 4 - 60 + "px";
+						div5.style.width = "60px";
+						div5.style.height = "30px";
+						div5.style.lineHeight = "30px";
+						div5.style.color = "#fff";
+						div5.style.backgroundColor = "red";
+						div5.style.borderRadius = "5px";
+						div5.style.fontSize = "14px";
+						div5.style.textAlign = "center";
+						div5.style.cursor = "pointer";
+						var div6 = document.createElement("div");
+						div6.innerHTML = "取消";
+						div6.className = "cancel";
+						div6.style.position = 'absolute';
+						div6.style.top = parseInt(retcTop) + parseInt(retcHeight) + 4 + "px";
+						div6.style.left = parseInt(retcLeft) + parseInt(retcWidth) + 4 - 120 + "px";
+						div6.style.width = "60px";
+						div6.style.height = "30px";
+						div6.style.lineHeight = "30px";
+						div6.style.color = "#fff";
+						div6.style.backgroundColor = "green";
+						div6.style.borderRadius = "5px";
+						div6.style.fontSize = "14px";
+						div6.style.textAlign = "center";
+						div6.style.cursor = "pointer";
+						$(".lay-box").css("backgroundColor", "transparent");
+						$(".lay-box").children(".little-box").remove();
+						$(".lay-box").append(div).append(div1).append(div2).append(div3).append(div4).append(div5).append(div6);
+						flag = false;
+						//点击取消的时候取消之前的mousedown开始的所有操作
+						$(".cancel").click(function() {
+							$(".pic-box").children(".lay-box").remove();
+							$(".pic-box").hide();
+							$("body").css("overflow", "auto");
+							$(document).unbind('mousewheel');
+						})
+						//点击确定按钮时获取之前准备做存储的canvas容器 将存储的数据放进容器中
+						$(".sure").click(function() {
+							var canvas = document.getElementsByClassName("canvas")[0];
+							var context = canvas.getContext('2d');
+							//getImageData()把截取部分打散成canvas离点(仅在线上可用，本地报错)
+							var then = context.getImageData(scrollLeft + parseInt(retcLeft) + 2, scrollTop + parseInt(retcTop) + 2, parseInt(retcWidth), parseInt(retcHeight));
+							var canvas2 = document.getElementById("then");
+							canvas2.width = parseInt(retcWidth);
+							canvas2.height = parseInt(retcHeight);
+							var context2 = canvas2.getContext('2d');
+							//putImageData()把canvas离点重新组合 以此达到截屏效果
+							context2.putImageData(then, 0, 0);
+							//toDataURL()把canvas对象转换成base64位编码
+							var url = canvas2.toDataURL();
+							//下面是确定以后初始化页面 清空使用数据 同时解开页面限制
+							$(".pic-box").empty();
+							$(".pic-box").hide();
+							$("body").css("overflow", "auto");
+							$(document).unbind('mousewheel');
+						})
+					}
+				})
+				//重点在鼠标移动时 对所有变量进行赋值判断 这里可以看做动态监测坐标点变化
+				document.onmousemove = function(e) {
+					if($(this).has(".done-box").length == 0) {
+						if(flag) {
+							var evt = window.event || e;
+							//这里是对截图框宽度的判断，最大不超过屏宽-10 结束点我们要求一定在浏览器可操作范围内 所以一定要做限制 高度一样
+							evt.clientX >= $(window).width() - 10 ? width = $(window).width() - 10 - startX : width = evt.clientX - startX;
+							//这里引出两个width和height变量作为中转 因为evt对象不可修改 只读属性 所以拿变量做中转
+							evt.clientY >= $(window).height() - 30 ? height = $(window).height() - 30 - startY : height = evt.clientY - startY;
+							retcLeft = startX + "px";
+							retcTop = startY + "px";
+							retcWidth = width + "px";
+							retcHeight = height + "px";
+							//这里看似没有用的赋值操作 实际上是为了解决我鼠标在浏览器内按下 脱离浏览器松开 再按下再进入浏览器会造成的开始结束点错乱的bug 这里的startX startY一定在要move的时候动态赋值
+							$(".little-box").css("marginLeft", retcLeft);
+							$(".little-box").css("marginTop", retcTop);
+							$(".little-box").css("width", retcWidth);
+							$(".little-box").css("height", retcHeight);
+							//自此以上是对拖拽出来的选择框的宽高位置动态赋值
+						}
+					}
+				}
+			});
+		})
+	</script>
+</body>
+
+</html>
