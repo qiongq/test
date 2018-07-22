@@ -64,10 +64,86 @@
 		var res=str.localeCompare(var2);
 		console.log(res);//输出1*/
 
-		var str = '126';
+		/*var str = '126';
 		var var2 = '124';
 		var res=str.localeCompare(var2);
-		console.log(res);
+		console.log(res);*/
+
+		/*var stringObj="终古人民共和国，终古人民";
+		var newstr=stringObj.replace("终古","中国");
+		alert(newstr);//中国人民共和国，终古人民
+
+		var stringObj="终古人民共和国，终古人民";
+		var newstr=stringObj.replace("终古","中国");
+		newstr=newstr.replace("终古","中国");
+		alert(newstr);//中国人民共和国，中国人民
+
+		var reg=new RegExp("终古","g"); //创建正则RegExp对象
+		var stringObj="终古人民共和国，终古人民";
+		var newstr=stringObj.replace(reg,"中国");
+		alert(newstr);//中国人民共和国，中国人民
+
+		var str="中华人民共和国，中华人民共和国";
+		var newstr=str.replace(/(人)/g,"<font color=red>$1</font>");
+		document.write(newstr);
+
+		var s=prompt("请输入在查找的字符","人");
+		var reg=new RegExp("("+s+")","g");
+		var str="中华人民共和国，中华人民共和国";
+		var newstr=str.replace(reg,"<font color=red>$1</font>");
+		document.write(newstr);
+
+		function test(){
+			alert("参数个数："+arguments.length);
+			for(var i = 0; i < arguments.length ; i++){
+				console.log('第'+(i+1)+'个参数的值为：'+arguments[i]);
+			}
+		}
+		test("aa","bb","cc");*/
+
+		/*var reg=new RegExp("\\d","g");
+		var str="abd1afa4sdf";
+		str.replace(reg,function(){alert(arguments.length);});//调用2次，长度为3
+
+		function test(){
+			for(var i=0;i<arguments.length;i++){
+			    console.log("第"+(i+1)+"个参数的值："+arguments[i]);
+			}
+		}
+		var reg=new RegExp("\\d","g");
+		var str="abd1afa4sdf";
+		str.replace(reg,test);
+
+		// 第1个参数的值：1
+		// 第2个参数的值：3
+		// 第3个参数的值：abd1afa4sdf
+
+		// 第1个参数的值：4
+		// 第2个参数的值：7
+		// 第3个参数的值：abd1afa4sdf*/
+
+
+// if("2009-12-17".match(/(\d{4})-(\d+)-(\d+)/)) {
+
+//   alert(RegExp.$1 + '年' + RegExp.$2 + '月' + RegExp.$3 + '日');
+
+// }
+
+		var reg=new RegExp("中华","g");
+		var str="中华人民共和国，中华人民共和国,国";
+		var newstr=str.replace(reg,"<font color=red>$1</font>");
+		alert(newstr);
+
+		document.write(newstr);
+
+		// function test($1){
+		//   return "<font color='red'>"+$1+"</font>"
+		// }
+		// var s=prompt("请输入在查找的字符","人");
+		// var reg=new RegExp("("+s+")","g");
+		// var str="中华人民共和国，中华人民共和国";
+		// var newstr=str.replace(reg,test);
+		// document.write(newstr);
 
 
 
