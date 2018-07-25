@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>构造函数练习</title>
+</head>
+<body>
+	<script>
+		//es5
+		/*function Calculate(num){
+			this.num = num;
+		}
+		Calculate.prototype.add = function(){
+			if(this.num < 0){
+				console.log('错误');
+			}else if(this.num){
+				console.log(++this.num);
+			}else{
+				console.log('1');
+			}
+		}
+
+		const a1 = new Calculate(-1);
+		const a2 = new Calculate();
+		const a3 = new Calculate(9);
+
+		a1.add();
+		a2.add();
+		a3.add();*/
+
+		//es6
+		class Calculate{
+			constructor(num){
+				this.num = num;
+			}
+			add(){
+				if(this.num < 0){
+					console.log('错误');
+				}else if(this.num){
+					console.log(++this.num);
+				}else{
+					console.log('1');
+				}
+			}
+		}
+
+		const a1 = new Calculate({
+			num:-1
+		});
+		const a2 = new Calculate();
+		const a3 = new Calculate({
+			num:9
+		});
+		//console.log(a1,a2,a3);
+		console.log(Calculate);
+	</script>
+</body>
+</html>
