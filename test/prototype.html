@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>es6练习</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			class Div {
+				constructor(x, y) {
+					this.x = x; //共享属性，类本身没有
+					this.y = y;
+				} //没有,！！！
+				move() { //共享方法
+					console.log('动起来');
+				}
+			}
+			
+			const [div1,div2] = [new Div(10,20),new Div(15,20)];//声明两个实例
+			div1.z = 30;//给实例添加一个自己的属性
+			const [d1,d2] = [new Date(),new Date()];
+			
+			console.log(
+			    typeof Div,//function,构造函数虽说是类，但本质是构造函数
+			    Div.prototype.constructor === Div,//true
+			    div1.__proto__ === Div.prototype,//true
+			    Object.getPrototypeOf(div1) === Div.prototype,//true 
+			    Object.getPrototypeOf(div1) ===Object.getPrototypeOf(div2),//true
+			    
+			);
+			
+			console.log(
+			    typeof Date,//function
+			    Date.prototype.constructor === Date,//true
+			    Object.getPrototypeOf(d1) === Date.prototype,//true 
+			    Object.getPrototypeOf(d1) ===Object.getPrototypeOf(d2),//true
+			);
+		</script>
+	</body>
+
+</html>

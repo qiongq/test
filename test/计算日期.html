@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算日期</title>
+</head>
+<body>
+	<script>
+		let data = ['2015-01-01','2017-02-26'];
+
+		function setTime(data) {
+			let time1 = data[0].split('-');
+			let time2 = data[1].split('-');
+			let times = [];
+
+			if(time1[0] == time2[0] && time1[2] < time2[2]){
+				//跨月并且开始日小于结束日
+				for (var i = time2[1] - time1[1]; i >= -1; i--) {
+					console.log(1);
+					if(i == -1){
+						times.push(time2[0]+'-'+time2[1]+'-'+time2[2]);
+					}else{
+						times.push(time2[0]+'-'+(time2[1]-i)+'-'+time1[2]);
+					}
+				}
+				console.log(times);
+			}else if(time1[0] == time2[0] && time1[2] >= time2[2]){
+				//跨月并且开始日大于等于结束日
+				for (var i = time2[1] - time1[1]; i >= 0; i--) {
+					if(i == 0){
+						times.push(time2[0]+'-'+time2[1]+'-'+time2[2]);
+					}else{
+						times.push(time2[0]+'-'+(time2[1]-i)+'-'+time1[2]);
+					}
+				}
+				console.log(times);
+			}else if (time1[0] < time2[0] && time1[2] < time2[2]){
+				//跨年并且开始日小于结束日
+				for (var i = time2[0] - time1[0]; i >= 0; i--) {
+					if(i == 0){
+						//最后一年
+						for (var j = 1; j <= time2[1]; j++) {
+							if(j < 10){
+								times.push(time2[0]+'-0'+j+'-'+time1[2]);
+							}else{
+								times.push(time2[0]+'-'+j+'-'+time1[2]);
+							}
+						}
+						times.push(time2[0]+'-'+time2[1]+'-'+time2[2]);
+					}else if (i == time2[0] - time1[0]){
+						//第一年
+						for (var j = time1[1]; j <= 12; j++) {
+							times.push(time1[0]+'-'+j+'-'+time1[2]);
+						}
+					}else {
+						//中间年
+						for (var j = 1; j <= 12; j++) {
+							if(j < 10){
+								times.push((time2[0]-i)+'-0'+j+'-'+time1[2]);
+							}else{
+								times.push((time2[0]-i)+'-'+j+'-'+time1[2]);
+							}
+						}
+					}
+				}
+				console.log(times);
+			}else if (time1[0] < time2[0] && time1[2] >= time2[2]){
+				//跨年并且开始日大于等于结束日
+				for (var i = time2[0] - time1[0]; i >= 0; i--) {
+					if(i == 0){
+						//最后一年
+						for (var j = 1; j <= time2[1]; j++) {
+							if(j < 10){
+								times.push(time2[0]+'-0'+j+'-'+time1[2]);
+							}else{
+								times.push(time2[0]+'-'+j+'-'+time1[2]);
+							}
+						}
+						times[times.length - 1] = (time2[0]+'-'+time2[1]+'-'+time2[2]);
+					}else if (i == time2[0] - time1[0]){
+						//第一年
+						for (var j = time1[1]; j <= 12; j++) {
+							times.push(time1[0]+'-'+j+'-'+time1[2]);
+						}
+					}else {
+						//中间年
+						for (var j = 1; j <= 12; j++) {
+							if(j < 10){
+								times.push((time2[0]-i)+'-0'+j+'-'+time1[2]);
+							}else{
+								times.push((time2[0]-i)+'-'+j+'-'+time1[2]);
+							}
+						}
+					}
+				}
+				console.log(times);
+			}
+		}
+
+		setTime(data);
+	</script>
+</body>
+</html>

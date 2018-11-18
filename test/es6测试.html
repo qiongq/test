@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>es6测试</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//https://segmentfault.com/a/1190000005875191    乱序
+
+			class LeTou{
+				constructor(nums){
+					var _this = this;
+					_this.nums = nums;//购买彩票号
+					_this.arr = [];//1-33号
+					_this.realReault = [];//中奖号
+					//初始化彩票号
+					for(var i=0;i<33;i++){
+						_this.arr.push(i+1);
+					}
+					//console.log('您购买的彩票号为：'+_this.nums.toString());
+					
+				}
+				//摇奖
+				shake(){
+					let _this = this;
+					var length = _this.arr.length,
+						randomIndex,
+						temp;
+					while(length) {
+						randomIndex = Math.floor(Math.random() * (length--)); //从0-当前个数直接取随机数
+						//交换当前项与最后一项
+						temp = _this.arr[randomIndex];
+						_this.arr[randomIndex] = _this.arr[length];
+						_this.arr[length] = temp;
+					}
+					
+					_this.realReault = _this.arr.splice(0,7);//取乱序后的前7项
+					//console.log('今日中奖号码为：'+_this.realReault.toString());
+				}
+				open(){
+					let _this = this;
+					_this.shake();
+					//_this.realReault = [5,2,7,4,1,6,3];
+					//循环购买列表对比是否相同
+					for(var i=0;i<_this.nums.length;i++){
+						if(_this.realReault.indexOf(_this.nums[i]) == -1){
+							//console.log('非常抱歉，您没中奖！');
+							return false;
+						}
+					}
+					//console.log('恭喜您，中奖啦~！');
+					
+				}
+			}
+			
+			const letou = new LeTou([1,2,3,4,5,6,7]); //打印：您购买的彩票号为：1,2,3,4,5,6,7
+			letou.shake();//打印：今日中奖号码为：X,X,X,X,X,X,X
+			letou.open();//打印：非常抱歉，您没中奖！/恭喜您，中奖啦~！
+
+			/*var x = [1, 2, 3, 4, 5];
+
+			function shuffle(arr) {
+				var length = arr.length,
+					randomIndex,
+					temp;
+				while(length) {
+					randomIndex = Math.floor(Math.random() * (length--));
+					temp = arr[randomIndex];
+					arr[randomIndex] = arr[length];
+					arr[length] = temp
+				}
+				return arr;
+			}
+			console.log(shuffle(x));*/
+		</script>
+	</body>
+
+</html>
